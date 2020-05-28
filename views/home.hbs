@@ -1,0 +1,27 @@
+<main>
+    {{#if isLoggedIn}}
+    <section class="actions">
+        <form method="post" action="/">
+            <h2>Salary time? Refill your account amount.</h2>
+            <input type="text" id="refill-amount" name="refill">
+            <button type="submit">Refill</button>
+        </form>
+        <div>
+            <h2>New expense comming up?</h2>
+            <a href="/create">Add it now</a>
+        </div>
+    </section>
+
+    <hr class="separator">
+    {{#if expense}}
+        {{#each expense}}
+            {{> expenses}}
+        {{/each}}
+    {{else}}
+    <h1 class="no-expenses">No expenses founded so far.. <span>GOOD JOB!</span></h1>
+    {{/if}}
+    {{else}}
+    <p class="guest-message">MoneyGone? The best expense tracker tool of all time!<br>Аre you new here? <a
+            href="/register">Register</a> yourself!</p>
+    {{/if}}
+</main>

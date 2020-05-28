@@ -1,0 +1,35 @@
+{{#if isLoggedIn}}
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a id="home" class="left-floated" href="/">MoneyGone</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a class="right-floated" href="/profile">{{ username }}</a>
+            </li>
+
+            <li>
+                <a class="right-floated" href="/logout">Logout</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+{{else}}
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a id="home" class="left-floated" href="/">MoneyGone</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a class="right-floated" href="/login">Login</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+{{/if}}
