@@ -33,14 +33,15 @@ module.exports = {
                     }
 
                     const token = jwt.createToken({ id: user._id });
-                    config.user = {
+                    const userDetails = {
                         username: username,
                         amount: user.amount,
-                        _id: user._id
+                        id: user.id
                     }
 
                     res
                         .cookie(config.cookie, token)
+                        .cookie(config.userDetails, userDetails)
                         .redirect('/');
                 })
         })
