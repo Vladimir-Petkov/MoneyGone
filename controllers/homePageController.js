@@ -7,7 +7,7 @@ module.exports = {
     const hbsObject = {
       pageTitle: 'Create Page',
       isLoggedIn: req.cookies[config.cookie] !== undefined,
-      username: req.cookies[config.userDetails.username].username
+      username: req.cookies[config.userDetails].username
     };
 
     return res.render('./expends/create.hbs', hbsObject);
@@ -45,7 +45,7 @@ module.exports = {
         const hbsObject = {
           pageTitle: 'Create Page',
           isLoggedIn: req.cookies[config.cookie] !== undefined,
-          username: req.cookies[config.userDetails.username].username,
+          username: req.cookies[config.userDetails].username,
           expense
         };
 
@@ -90,7 +90,7 @@ module.exports = {
       pageTitle: 'Create Page',
       isLoggedIn: req.cookies[config.cookie] !== undefined,
       user: req.cookies[config.userDetails.username],
-      username: req.cookies[config.userDetails.username].username
+      username: req.cookies[config.userDetails].username
     };
 
     res.render('./users/profile.hbs', hbsObject);

@@ -7,16 +7,18 @@ module.exports = {
             const hbsObject = {
                 pageTitle: 'Home Page',
                 isLoggedIn: req.cookies[config.cookie] !== undefined,
-                username: req.cookies[config.userDetails.username].username,
+                username: req.cookies[config.userDetails].username,
                 expense
             };
+            // console.log(hbsObject);
 
             res.render('home.hbs', hbsObject);
         })
     },
     refill: function (req, res) {
-        const username = req.cookies[config.userDetails.username].username;
+        const username = req.cookies[config.userDetails].username;
         const refill = +req.body.refill;
+        console.log(username)
 
         models.User.findOne({ username })
             .then((user) => {
