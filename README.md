@@ -28,7 +28,11 @@ The app is fully responsible built with Handlebars. Layout looks good on laptops
 
 * GET
 
-    * `/profile`
+   * `/profile`
+
+   * `/register`
+    
+   * `/login`
 
 * POST
 
